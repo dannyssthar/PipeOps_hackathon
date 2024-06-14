@@ -1,3 +1,4 @@
+// This is for Appointment Form Submission
 document.getElementById('appointment-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const time = document.getElementById('time').value;
@@ -10,6 +11,7 @@ document.getElementById('appointment-form').addEventListener('submit', async (e)
   console.log(data);
 });
 
+//This is for Health Data Form Submission
 document.getElementById('health-data-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const temperature = document.getElementById('temperature').value;
@@ -24,6 +26,7 @@ document.getElementById('health-data-form').addEventListener('submit', async (e)
   console.log(data);
 });
 
+//This Initializes Socket.IO Client 
 const socket = io('http://localhost:5000');
 
 socket.on('chat message', (msg) => {
@@ -32,6 +35,7 @@ socket.on('chat message', (msg) => {
   newMessage.textContent = msg;
   messageList.appendChild(newMessage);
 });
+
 
 document.getElementById('chat-form').addEventListener('submit', (e) => {
   e.preventDefault();
