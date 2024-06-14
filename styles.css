@@ -1,31 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/* I Imported Open Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&display=swap');
 
+/* I Applied Open Sans to the entire body */
 body {
+    font-family: 'Open Sans', sans-serif;
     margin: 20px;
-  }
-  
-  h1, h2 {
+}
+
+/* I Applied Open Sans to headers */
+h1, h2 {
     color: #333;
-  }
-  
-  form {
+}
+
+/* I Applied Open Sans to form elements */
+form {
     margin-bottom: 20px;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     margin-top: 10px;
-  }
-  
-  input {
+}
+
+input {
     display: block;
     margin-top: 5px;
     padding: 5px;
     width: 100%;
     max-width: 300px;
-  }
-  
-  button {
+}
+
+/* Apply Open Sans to button text */
+button {
     margin-top: 10px;
     padding: 24px 16px;
     background-color: #007BFF;
@@ -33,11 +39,10 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    font-family: 'open sans', sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Corrected font family name */
     font-size: 14px;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #0056b3;
-  }
-  
+}
