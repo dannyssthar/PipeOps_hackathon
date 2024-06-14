@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Telehealth Appointment Optimization</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="app.js"></script>
 </head>
 <body>
     <h1>Telehealth Appointment Optimization</h1>
-  <div id="app">
-    <!-- Appointment Form -->
-    <div>
-      <h2>Schedule Appointment</h2>
-      <form id="appointment-form">
-        <label for="time">Appointment Time:</label>
-        <input type="datetime-local" id="time" required>
-        <button type="submit">Schedule Appointment</button>
-      </form>
+    <div id="app">
+        <!-- Appointment Form -->
+        <div>
+            <h2>Schedule Appointment</h2>
+            <form id="appointment-form">
+                <label for="time">Appointment Time:</label>
+                <input type="datetime-local" id="time" required>
+                <button type="submit">Schedule Appointment</button>
+            </form>
+        </div>
+        <!-- Health Data Form -->
+        <div>
+            <h2>Submit Health Data</h2>
+            <form id="health-data-form">
+                <label for="temperature">Temperature:</label>
+                <input type="number" id="temperature" required>
+                <label for="bloodPressure">Blood Pressure:</label>
+                <input type="text" id="bloodPressure" required>
+                <label for="heartRate">Heart Rate:</label>
+                <input type="number" id="heartRate" required>
+                <button type="submit">Submit Health Data</button>
+            </form>
+        </div>
+        <!-- Live Chat -->
+        <div>
+            <h2>Live Chat</h2>
+            <ul id="messages"></ul>
+            <form id="chat-form">
+                <input type="text" id="message" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </div>
-    <!-- Health Data Form -->
-    <div>
-      <h2>Submit Health Data</h2>
-      <form id="health-data-form">
-        <label for="temperature">Temperature:</label>
-        <input type="number" id="temperature" required>
-        <label for="bloodPressure">Blood Pressure:</label>
-        <input type="text" id="bloodPressure" required>
-        <label for="heartRate">Heart Rate:</label>
-        <input type="number" id="heartRate" required>
-        <button type="submit">Submit Health Data</button>
-      </form>
-    </div>
-  </div>
-  <script src="app.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
-    <div>
-      <h2>Live Chat</h2>
-      <ul id="messages"></ul>
-      <form id="chat-form">
-        <input type="text" id="message" required>
-        <button type="submit">Send</button>
-      </form>
-    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
