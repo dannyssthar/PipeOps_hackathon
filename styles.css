@@ -9,7 +9,7 @@ body {
 
 /* I Applied Open Sans to headers */
 h1, h2 {
-    color: #333;
+    color: #1D1A1A;
 }
 
 /* I Applied Open Sans to form elements */
@@ -33,13 +33,13 @@ input {
 /* Apply Open Sans to button text */
 button {
     margin-top: 10px;
-    padding: 24px 16px;
+    padding: 16px 16px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 4px;
-    font-family: 'Open Sans', sans-serif; /* Corrected font family name */
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
 
