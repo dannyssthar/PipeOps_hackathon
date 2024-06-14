@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'open sans' sans-serif;
     margin: 20px;
   }
   
@@ -26,12 +26,14 @@ body {
   
   button {
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 24px 16px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 40px;
+    border-radius: 4px;
+    font-family: 'open sans', sans-serif;
+    font-size: 14px;
   }
   
   button:hover {
