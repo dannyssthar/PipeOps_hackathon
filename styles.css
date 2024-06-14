@@ -9,6 +9,7 @@ body {
 
 /* I Applied Open Sans to headers */
 h1, h2 {
+    font-family: 'Playfair Display', serif;
     color: #1D1A1A;
 }
 
