@@ -10,6 +10,10 @@ h1, h2 {
     color: #1D1A1A;
 }
 
+.container {
+    margin-top: 50px;
+}
+
 .form-group {
     margin-bottom: 15px;
 }
@@ -29,4 +33,15 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+#messages {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#messages li {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: #f8f9fa;
 }
