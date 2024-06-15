@@ -1,46 +1,23 @@
-/* I Applied Open Sans to the entire body */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
 body {
     font-family: 'Open Sans', sans-serif;
     margin: 20px;
 }
 
-/* I Applied Open Sans to headers */
 h1, h2 {
     font-family: 'Playfair Display', serif;
-    color: #1D1A1A;
+    color: #333;
 }
 
-/* I Applied Open Sans to form elements */
-form {
-    margin-bottom: 20px;
+.card-title {
+    font-family: 'Playfair Display', serif;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
-}
-
-input {
-    display: block;
-    margin-top: 5px;
-    padding: 5px;
-    width: 100%;
-    max-width: 300px;
-}
-
-/* Apply Open Sans to button text */
 button {
-    margin-top: 10px;
-    padding: 16px 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
 }
 
-button:hover {
-    background-color: #0056b3;
+.card {
+    margin-bottom: 20px;
 }
