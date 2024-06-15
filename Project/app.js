@@ -1,45 +1,80 @@
-// This is for Appointment Form Submission
-document.getElementById('appointment-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const time = document.getElementById('time').value;
-  const response = await fetch('http://localhost:5000/appointments', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ patientId: 'patient123', time, status: 'Scheduled' })
+document.addEventListener('DOMContentLoaded', () => {
+  // Handle Appointment Form Submission
+  const appointmentForm = document.getElementById('appointment-form');
+  appointmentForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const time = document.getElementById('time').value;
+      
+      const appointmentData = {
+          patientId: '12345', // Replace with actual patient ID
+          doctorId: '67890', // Replace with actual doctor ID
+          time: new Date(time),
+          status: 'scheduled'
+      };
+
+      const response = await fetch('/appointments', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(appointmentData),
+      });
+
+      if (response.ok) {
+          alert('Appointment scheduled successfully!');
+      } else {
+          alert('Failed to schedule appointment.');
+      }
   });
-  const data = await response.json();
-  console.log(data);
-});
 
-//This is for Health Data Form Submission
-document.getElementById('health-data-form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const temperature = document.getElementById('temperature').value;
-  const bloodPressure = document.getElementById('bloodPressure').value;
-  const heartRate = document.getElementById('heartRate').value;
-  const response = await fetch('http://localhost:5000/health-data', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ patientId: 'patient123', vitals: { temperature, bloodPressure, heartRate } })
+  // Handle Health Data Form Submission
+  const healthDataForm = document.getElementById('health-data-form');
+  healthDataForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const temperature = document.getElementById('temperature').value;
+      const bloodPressure = document.getElementById('bloodPressure').value;
+      const heartRate = document.getElementById('heartRate').value;
+
+      const healthData = {
+          patientId: '12345', // Replace with actual patient ID
+          vitals: {
+              temperature: parseFloat(temperature),
+              bloodPressure: bloodPressure,
+              heartRate: parseInt(heartRate, 10),
+          },
+      };
+
+      const response = await fetch('/health-data', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(healthData),
+      });
+
+      if (response.ok) {
+          alert('Health data submitted successfully!');
+      } else {
+          alert('Failed to submit health data.');
+      }
   });
-  const data = await response.json();
-  console.log(data);
-});
 
-//This Initializes Socket.IO Client 
-const socket = io('http://localhost:5000');
+  // Socket.io Chat Functionality
+  const socket = io();
+  const chatForm = document.getElementById('chat-form');
+  const messageInput = document.getElementById('message');
+  const messagesList = document.getElementById('messages');
 
-socket.on('chat message', (msg) => {
-  const messageList = document.getElementById('messages');
-  const newMessage = document.createElement('li');
-  newMessage.textContent = msg;
-  messageList.appendChild(newMessage);
-});
+  chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const message = messageInput.value;
+      socket.emit('chat message', message);
+      messageInput.value = '';
+  });
 
-
-document.getElementById('chat-form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const message = document.getElementById('message').value;
-  socket.emit('chat message', message);
-  document.getElementById('message').value = '';
+  socket.on('chat message', (msg) => {
+      const li = document.createElement('li');
+      li.textContent = msg;
+      messagesList.appendChild(li);
+  });
 });
