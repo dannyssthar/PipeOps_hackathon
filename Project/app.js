@@ -78,3 +78,38 @@ document.addEventListener('DOMContentLoaded', () => {
       messagesList.appendChild(li);
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const appointmentForm = document.getElementById('appointment-form');
+
+    appointmentForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const timeInput = document.getElementById('time').value;
+        const doctorId = 1; // Hardcoded for simplicity
+        const patientPreference = new Date(timeInput).getHours();
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/optimize-schedule', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    doctor_id: doctorId,
+                    patient_preference: patientPreference
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const result = await response.json();
+            alert(`Suggested appointment time: ${result.suggested_time}`);
+        } catch (error) {
+            console.error('There has been a problem with your fetch operation:', error);
+        }
+    });
+});
