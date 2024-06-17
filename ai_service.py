@@ -14,7 +14,7 @@ except Exception as e:
 # Define fixed availability for all doctors (assuming availability is always 1)
 availability = 1
 
-@app.route('/optimize-schedule', methods=['POST'])
+@app.route('http://127.0.0.1:5000/optimize-schedule', methods=['POST'])
 def optimize_schedule():
     try:
         # Extract data from JSON request
