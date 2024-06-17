@@ -21,3 +21,14 @@ INFO:werkzeug: * Debugger PIN: 450-789-410
 2024-06-17 17:09:37,042 INFO __main__ Model loaded successfully.
 2024-06-17 17:09:37,055 WARNING werkzeug  * Debugger is active!
 2024-06-17 17:09:37,064 INFO werkzeug  * Debugger PIN: 450-789-410
+2024-06-17 17:16:39,465 INFO __main__ Model loaded successfully.
+2024-06-17 17:16:39,499 INFO werkzeug [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-06-17 17:16:39,499 INFO werkzeug [33mPress CTRL+C to quit[0m
+2024-06-17 17:16:39,502 INFO werkzeug  * Restarting with stat
+2024-06-17 17:16:41,888 INFO __main__ Model loaded successfully.
+2024-06-17 17:16:41,900 WARNING werkzeug  * Debugger is active!
+2024-06-17 17:16:41,910 INFO werkzeug  * Debugger PIN: 450-789-410
+2024-06-17 17:17:08,560 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:08] "[33mGET / HTTP/1.1[0m" 404 -
+2024-06-17 17:17:08,779 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-17 17:17:29,631 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:29] "[33mGET / HTTP/1.1[0m" 404 -
