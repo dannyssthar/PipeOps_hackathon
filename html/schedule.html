@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Schedule Appointment</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Logo</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule Appointment</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="live-chat.html">Live Chat</a></li>
+        </ul>
+        <div id="profileIcon" class="profile-icon"></div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1>Schedule Appointment</h1>
+        <div class="card">
+            <div class="card-body">
+                <form id="appointment-form">
+                    <div class="form-group">
+                        <label for="time">Appointment Time:</label>
+                        <input type="datetime-local" id="time" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/user.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
