@@ -59,3 +59,25 @@ transition-property transform, opacity
 transition-timing-function linear, linear
 unicode-bidi isolate
 width 48px
+
+
+
+<h1 _ngcontent-ng-c2653974238="" class="ng-tns-c2653974238-2"><span _ngcontent-ng-c2653974238="" class="bard-hello ng-tns-c2653974238-2 ng-star-inserted" style=""> Hello, Chibuzor Daniel </span><!----><!----><br _ngcontent-ng-c2653974238="" class="ng-tns-c2653974238-2"><!----><span _ngcontent-ng-c2653974238="" class="bard-question ng-tns-c2653974238-2 ng-star-inserted" style="">How can I help you today?</span><!----><!----></h1>
+
+
+color rgb(255, 255, 255)
+display block
+font-family "Google Sans", "Helvetica Neue", sans-serif
+font-size 44px
+font-weight 500
+height 92px
+letter-spacing -1.32px
+line-height 46px
+margin-block-end 29.48px
+margin-block-start 24px
+margin-inline-end 0px
+margin-inline-start 0px
+margin-top 24px
+unicode-bidi isolate
+width 507.2px
+-webkit-font-smoothing antialiased
