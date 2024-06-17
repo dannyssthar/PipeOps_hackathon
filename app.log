@@ -32,3 +32,5 @@ INFO:werkzeug: * Debugger PIN: 450-789-410
 2024-06-17 17:17:08,560 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:08] "[33mGET / HTTP/1.1[0m" 404 -
 2024-06-17 17:17:08,779 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
 2024-06-17 17:17:29,631 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 17:17:29] "[33mGET / HTTP/1.1[0m" 404 -
+2024-06-17 21:56:57,208 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 21:56:57] "[33mGET / HTTP/1.1[0m" 404 -
+2024-06-17 21:56:57,429 INFO werkzeug 127.0.0.1 - - [17/Jun/2024 21:56:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
