@@ -28,5 +28,5 @@ Frontend Integration:
 
 11. Testing:
 
-12. Tested the application locally to ensure all functionalities work as expected.
+12. Tested the application locally to ensure all functionalities work as expected.But I don't know why it's still not displaying from the Pipops website.
 13. Ensured the model prediction endpoint is called correctly and the response is handled properly on the frontend.
