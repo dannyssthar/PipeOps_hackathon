@@ -4,33 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Chat</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/live-chat.css') }}">
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">My App</div>
-        <ul class="nav-links">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
-            <li><a href="{{ url_for('live_chat') }}">Live Chat</a></li>
-        </ul>
-        <div class="profile-icon" id="profileIcon">CD</div>
-    </nav>
-
-    <section class="live-chat-section">
-        <div class="container">
-            <h2>Live Chat</h2>
-            <div class="chat-messages"></div>
-            <form class="chat-form">
-                <textarea placeholder="Type your message..."></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
-
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <div class="sidebar">
+        <h2>Live Chat</h2>
+        <!-- Add your chat interface here -->
+    </div>
 </body>
 </html>
