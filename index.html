@@ -3,33 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/floating-button.css') }}">
+    <title>PipeOps Hackathon</title>
+    <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">My App</div>
-        <ul class="nav-links">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
-            <li><a href="{{ url_for('live_chat') }}">Live Chat</a></li>
-        </ul>
-        <div class="profile-icon" id="profileIcon">CD</div>
+    <nav>
+        <div class="logo">Logo</div>
+        <div>
+            <a href="#schedule" class="nav-link">Schedule Appointment</a>
+            <a href="#live-chat" class="nav-link">Live Chat</a>
+            <a href="#about" class="nav-link">About Us</a>
+        </div>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile" class="profile-img">
+        </div>
     </nav>
 
-    <section class="hero-section">
+    <div class="hero-section">
+        <div class="animated-bg"></div>
         <div class="hero-text">
-            <h1>Welcome to Our Service</h1>
-            <p id="helloText">Hello, Chibuzor</p>
+            <span id="hero-name">Hello, User</span><br>
+            <span>What should I do for you today?</span>
         </div>
-    </section>
+    </div>
 
-    <div class="floating-button">Chat</div>
+    <div id="schedule" class="section">
+        <h2>Schedule Appointment</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Schedule an Appointment</button>
+    </div>
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <div id="live-chat" class="section">
+        <h2>Live Chat</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Live Chat</button>
+    </div>
+
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>About Us</button>
+    </div>
+
+    <div class="float-button">
+        <span>💬</span>
+        <div class="notification-indicator"></div>
+    </div>
+
+    <script src="JavaScript/app.js"></script>
 </body>
 </html>
