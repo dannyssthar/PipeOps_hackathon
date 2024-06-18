@@ -1,18 +1,141 @@
 :root {
     --primary-color: rgb(79, 33, 234);
-    --secondary-color: rgb(216, 216, 216);
-    --background-color: rgb(24, 24, 26);
+    --secondary-color: rgb(24, 24, 26);
     --text-color: rgb(216, 216, 216);
-}
-
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    --button-text-color: white;
+    --glass-color: rgba(255, 255, 255, 0.1);
+    --blur-radius: 20px;
 }
 
 body {
-    font-family: "Google Sans", "Helvetica Neue", sans-serif;
-    background-color: var(--background-color);
+    background-color: var(--secondary-color);
     color: var(--text-color);
+    font-family: "Google Sans", "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+a.active {
+    color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav {
+    background: var(--glass-color);
+    backdrop-filter: blur(var(--blur-radius));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 48px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+nav a {
+    margin: 0 10px;
+}
+
+nav .logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--glass-color);
+    backdrop-filter: blur(var(--blur-radius));
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px; /* to account for fixed navbar */
+}
+
+.hero-text {
+    font-size: 44px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animated-bg {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 25% 25%, var(--primary-color), var(--text-color));
+    animation: moveBackground 10s linear infinite;
+    filter: blur(200px);
+    z-index: -1;
+}
+
+@keyframes moveBackground {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(25%, 25%); }
+    50% { transform: translate(50%, 50%); }
+    75% { transform: translate(75%, 75%); }
+    100% { transform: translate(100%, 100%); }
+}
+
+.float-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatButtonBorder 0.4s infinite, shake 1s infinite;
+}
+
+@keyframes floatButtonBorder {
+    0% { box-shadow: 0 0 5px var(--button-text-color); }
+    50% { box-shadow: 0 0 20px var(--button-text-color); }
+    100% { box-shadow: 0 0 5px var(--button-text-color); }
+}
+
+@keyframes shake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(0, 0); }
+}
+
+.notification-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.section {
+    padding: 32px;
+}
+
+
