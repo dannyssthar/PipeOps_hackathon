@@ -1,141 +1,55 @@
-:root {
-    --primary-color: rgb(79, 33, 234);
-    --secondary-color: rgb(24, 24, 26);
-    --text-color: rgb(216, 216, 216);
-    --button-text-color: white;
-    --glass-color: rgba(255, 255, 255, 0.1);
-    --blur-radius: 20px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PipeOps Hackathon</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Logo</div>
+        <div>
+            <a href="#schedule" class="nav-link">Schedule Appointment</a>
+            <a href="#live-chat" class="nav-link">Live Chat</a>
+            <a href="#about" class="nav-link">About Us</a>
+        </div>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile" class="profile-img">
+        </div>
+    </nav>
 
-body {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    font-family: "Google Sans", "Helvetica Neue", sans-serif;
-    margin: 0;
-    padding: 0;
-}
+    <div class="hero-section">
+        <div class="animated-bg"></div>
+        <div class="hero-text">
+            <span id="hero-name">Hello, User</span><br>
+            <span>What should I do for you today?</span>
+        </div>
+    </div>
 
-a {
-    color: var(--text-color);
-    text-decoration: none;
-}
+    <div id="schedule" class="section">
+        <h2>Schedule Appointment</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Schedule an Appointment</button>
+    </div>
 
-a.active {
-    color: var(--primary-color);
-}
+    <div id="live-chat" class="section">
+        <h2>Live Chat</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>Live Chat</button>
+    </div>
 
-button {
-    background-color: var(--primary-color);
-    color: var(--button-text-color);
-    border: none;
-    padding: 16px 24px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+    <div id="about" class="section">
+        <h2>About Us</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>About Us</button>
+    </div>
 
-nav {
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 32px 48px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
+    <div class="float-button">
+        <span>💬</span>
+        <div class="notification-indicator"></div>
+    </div>
 
-nav a {
-    margin: 0 10px;
-}
-
-nav .logo {
-    font-weight: bold;
-    font-size: 24px;
-}
-
-.hero-section {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
-    position: relative;
-    overflow: hidden;
-    margin-top: 60px; /* to account for fixed navbar */
-}
-
-.hero-text {
-    font-size: 44px;
-    font-weight: 500;
-    color: white;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.animated-bg {
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 25% 25%, var(--primary-color), var(--text-color));
-    animation: moveBackground 10s linear infinite;
-    filter: blur(200px);
-    z-index: -1;
-}
-
-@keyframes moveBackground {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(25%, 25%); }
-    50% { transform: translate(50%, 50%); }
-    75% { transform: translate(75%, 75%); }
-    100% { transform: translate(100%, 100%); }
-}
-
-.float-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: floatButtonBorder 0.4s infinite, shake 1s infinite;
-}
-
-@keyframes floatButtonBorder {
-    0% { box-shadow: 0 0 5px var(--button-text-color); }
-    50% { box-shadow: 0 0 20px var(--button-text-color); }
-    100% { box-shadow: 0 0 5px var(--button-text-color); }
-}
-
-@keyframes shake {
-    0% { transform: translate(0, 0); }
-    25% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, -2px); }
-    75% { transform: translate(2px, -2px); }
-    100% { transform: translate(0, 0); }
-}
-
-.notification-indicator {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-}
-
-.section {
-    padding: 32px;
-}
-
-
+    <script src="JavaScript/app.js"></script>
+</body>
+</html>
