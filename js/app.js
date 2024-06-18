@@ -1,13 +1,61 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const path = window.location.pathname;
+    const profileIcon = document.getElementById('profileIcon');
+    const helloText = document.getElementById('helloText');
 
-    if (path === "/index.html") {
-        import('./user.min.js').then(module => module.default());
-        import('./chat.min.js').then(module => module.default());
-    } else if (path === "/schedule.html" || path === "/about.html") {
-        import('./user.min.js').then(module => module.default());
-    } else if (path === "/live-chat.html") {
-        import('./user.min.js').then(module => module.default());
-        import('./chat.min.js').then(module => module.default());
+    // Simulate fetching user data from Google
+    const user = {
+        firstName: "Chibuzor",
+        initials: "CD"
+    };
+
+    if (profileIcon) {
+        profileIcon.textContent = user.initials;
+    }
+
+    if (helloText) {
+        helloText.textContent = `Hello, ${user.firstName}`;
+    }
+
+    // Floating button animation
+    const floatingButton = document.querySelector('.floating-button');
+    if (floatingButton) {
+        floatingButton.addEventListener('click', () => {
+            // Open live chat
+            window.location.href = "live-chat.html";
+        });
+    }
+
+    // Handle form submission
+    const appointmentForm = document.getElementById('appointmentForm');
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(appointmentForm);
+            const data = {
+                doctor_id: formData.get('doctor_id'),
+                patient_preference: formData.get('patient_preference')
+            };
+
+            try {
+                const response = await fetch('/optimize-schedule', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert(`Suggested time slot: ${result.suggested_time}`);
+                } else {
+                    alert(`Error: ${result.error}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while scheduling the appointment.');
+            }
+        });
     }
 });
