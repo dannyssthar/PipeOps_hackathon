@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, render_template, jsonify
 import joblib
 import logging
 
@@ -16,6 +16,22 @@ try:
 except Exception as e:
     logger.error(f"Error loading model: {e}")
     raise e
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/schedule')
+def schedule():
+    return render_template('schedule.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/live-chat')
+def live_chat():
+    return render_template('live-chat.html')
 
 @app.route('/optimize-schedule', methods=['POST'])
 def optimize_schedule():
