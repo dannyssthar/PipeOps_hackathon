@@ -1,1 +1,32 @@
+.live-chat-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.live-chat-section .container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.live-chat-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.chat-messages {
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.chat-form {
+    display: flex;
+}
+
+.chat-form textarea {
+    flex: 1;
+    margin-right: 10px;
+}
 
