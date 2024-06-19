@@ -3,33 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/floating-button.css') }}">
+    <title>Live Chat</title>
+    <script src="https://kit.fontawesome.com/2f26397946.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">My App</div>
-        <ul class="nav-links">
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About Us</a></li>
-            <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
-            <li><a href="{{ url_for('live_chat') }}">Live Chat</a></li>
-        </ul>
-        <div class="profile-icon" id="profileIcon">CD</div>
+    <nav>
+        <div class="nav-elements">
+            <div class="logo">THETA</div>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../html/schedule.html" class="nav-link">Schedule Appointment</a>
+                <a href="../html/live-chat.html" class="nav-link">Live Chat</a>
+                <a href="../html/about.html" class="nav-link">About Us</a>
+            </div>
+            <div class="nav-button">
+                <button class="signINbtn">Sign In</button>
+                <button class="signUPbtn">Sign Up</button>
+            </div>
+        </div>
     </nav>
-    
+
     <section class="hero-section">
+        <div class="animated-bg"></div>
+        <div class="animated-bg-secondary"></div>
         <div class="hero-text">
-            <h1>Welcome to Our Service</h1>
-            <p id="helloText">Hello, Chibuzor</p>
+            <span id="hero-name">Chat Live with our Professional Doctors</span><br>
+        </div>
+        <br>
+        <div class="h2-texts">
+            <button class="signUPbtn">Chat Live</button>
         </div>
     </section>
 
-    <div class="floating-button">Chat</div>
+    <!-- <script src="../path/to/your/typewriter.js"></script> -->
 
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <div class="float-button">
+        <span><i class="fas fa-comment-alt"></i></span>
+        <div class="notification-indicator"></div>
+    </div>
+
+    <script src="../JavaScript/app.js"></script>
+    <script src="../JavaScript/script.js"></script>
 </body>
 </html>
