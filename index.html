@@ -3,84 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PipeOps Hackathon</title>
-    <link rel="stylesheet" href="CSS/styles.css">
-    <script src="https://kit.fontawesome.com/2f26397946.js" crossorigin="anonymous"></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/hero.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/floating-button.css') }}">
 </head>
 <body>
-    <nav>
-        <div class="nav-elements">
-            <div class="logo">THETA</div>
-            <div class="nav-links">
-                <a href="../index.html" class="nav-link">Home</a>
-                <a href="../html/schedule.html" class="nav-link">Schedule Appointment</a>
-                <a href="../html/live-chat.html" class="nav-link">Live Chat</a>
-                <a href="../html/about.html" class="nav-link">About Us</a>
-            </div>
-            <!--<div class="profile">
-                <i class="fa-solid fa-circle-user"></i>
-            </div>-->
-            <div class="nav-button">
-                <button class="signINbtn">Sign In</button>
-                <button class="signUPbtn">Sign Up</button>
-            </div>
-        </div>
+    <nav class="navbar">
+        <div class="logo">My App</div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('schedule') }}">Schedule</a></li>
+            <li><a href="{{ url_for('live_chat') }}">Live Chat</a></li>
+        </ul>
+        <div class="profile-icon" id="profileIcon">CD</div>
     </nav>
     
     <section class="hero-section">
-        <div class="animated-bg"></div>
-        <div class="animated-bg-secondary"></div>
         <div class="hero-text">
-            <span id="hero-name">Good-Day, Helen</span><br>
+            <h1>Welcome to Our Service</h1>
+            <p id="helloText">Hello, Chibuzor</p>
         </div>
-        <br>    
-        <div class="h2-texts"><span>Let's get your Health in check right away. Select an option below <br> Or use the Health Bot floating beside you</span> <br>
-        Theta will guide you on any questions you want as regards the services of this platform</div>
     </section>
 
-    <!-- <script src="../path/to/your/typewriter.js"></script> -->
+    <div class="floating-button">Chat</div>
 
-    <section class="content">
-        <div id="schedule" class="section">
-            <h2>Schedule Appointment</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Schedule an Appointment</button>
-        </div>
-
-        <div id="live-chat" class="section">
-            <h2>Live Chat</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Live Chat</button>
-        </div>
-
-        <div id="about" class="section">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>About Us</button>
-        </div>   
-    </section>
-
-    <div class="float-button">
-        <span><i class="fas fa-comment-alt"></i></span>
-        <div class="notification-indicator"></div>
-    </div>
-
-    <section id="live-chat" class="live-chat-sidebar">
-        <div class="live-chat-header">
-            <i class="fas fa-chevron-left" id="back-btn"></i>
-            <h2>THETA</h2>
-        </div>
-        <div class="live-chat-messages" id="live-chat-messages">
-            <!-- Messages will appear here -->
-        </div>
-        <div class="live-chat-input">
-            <i class="fas fa-paperclip"></i>
-            <input type="text" id="message-input" placeholder="Type a message...">
-            <i class="fas fa-microphone"></i>
-        </div>
-    </section>    
-
-    <script src="JavaScript/app.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
