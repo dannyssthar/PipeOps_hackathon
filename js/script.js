@@ -57,3 +57,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+function typewriterEffect(element, text, speed) {
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    type();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const heroName = document.getElementById('hero-name');
+    typewriterEffect(heroName, 'About Us', 100);
+});
