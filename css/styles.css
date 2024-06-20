@@ -144,6 +144,7 @@ nav .logo {
 
 .hero-section {
     height: 100vh;
+    padding: 100px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,34 +157,18 @@ nav .logo {
     margin-top: 60px;
 }
 
-/* .hero-text {
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 4rem;
-    letter-spacing: -.03em;
-} */
-
 .hero-text {
-    font-size: 2rem;
     font-weight: 500;
     line-height: 4rem;
     letter-spacing: -.03em;
     color: var(--primary-color);
-    white-space: wrap;
+    white-space: nowrap;
     overflow: hidden;
+    text-align: center;
 }
 
-/* @keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: var(--primary-color);
-    }
-} */
-
 .hero-text span {
-    font-size: 7.5rem;
+    font-size: 6rem;
     line-height: 10rem;
     color: transparent;
     background-image: linear-gradient(74deg,
@@ -296,19 +281,20 @@ nav .logo {
     right: calc(var(--float-button-size) * 0.1); /* 10% of button size from right */
 }
 
-#calendar-container {
-    display: flex;
-    flex-direction: column;
+.calendar-container {
     align-items: center;
+    display: none;
     justify-content: center;
     margin: 50px auto;
     width: 80%;
 }
-#calendar {
+.calendar {
     width: 100%;
     max-width: 900px;
+    justify-content: center;
+    margin: 50px auto;
 }
-.submit-button {
+#submit-button {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: var(--primary-color);
@@ -316,8 +302,10 @@ nav .logo {
     border: none;
     cursor: pointer;
 }
-.submit-button:hover {
-    background-color: var(--primary-hover-color);
+
+footer{
+    padding: 16px 24px;
+    text-align: center;
 }
 
 
@@ -375,9 +363,10 @@ nav .logo {
     font-size: 1.5rem;
 }
 .schedule-container {
-    padding: 2rem;
-    background-color: #f4f4f4;
+    padding: 3rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .schedule-container h2 {
     margin-bottom: 1rem;
