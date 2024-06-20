@@ -63,6 +63,27 @@ nav {
     z-index: 1000;
 }
 
+.nav-elements .logo {
+    line-height: 2rem;
+    color: transparent;
+    background-image: linear-gradient(32deg,
+        var(--telehealth-color-text-gradient-stop-1) 0,
+        var(--telehealth-color-text-gradient-stop-2) 8%,
+        var(--telehealth-color-text-gradient-stop-3) 20%,
+        var(--telehealth-color-text-gradient-stop-3) 24%,
+        var(--telehealth-color-text-gradient-stop-2) 35%,
+        var(--telehealth-color-text-gradient-stop-1) 44%,
+        var(--telehealth-color-text-gradient-stop-2) 50%,
+        var(--telehealth-color-text-gradient-stop-3) 56%,
+        var(--telehealth-color-surface) 75%,
+        var(--telehealth-color-surface) 100%);
+    background-size: 400% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: bold;
+  }
+
 .nav-elements {
     display: flex;
     justify-content: space-between;

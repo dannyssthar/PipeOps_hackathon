@@ -1,14 +1,15 @@
 {
-  "name": "THETA",
+  "name": "theta",
   "version": "1.0.0",
-  "description": "Your app description",
-  "main": "index.js",
+  "description": "THETA Application for scheduling appointments",
+  "main": "js/server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node js/server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "tui-date-picker": "^4.3.3"
   },
-  "author": "Your Name",
+  "author": "DECEE",
   "license": "ISC"
 }
