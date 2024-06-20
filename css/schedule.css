@@ -114,250 +114,223 @@ nav {
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease; /* Smooth transitions for all properties */
-}
-
-.signINbtn { /* Sign In button styles */
-    background-color: transparent;
-}
-
-.signUPbtn { /* Sign Up button styles */
     background-color: var(--primary-color);
-    border: 1.5px solid var(--primary-color); 
+    border: 1px solid var(--primary-color);
 }
 
-.signUPbtn:hover {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.3)); 
+.nav-button button:hover {
+    background-color: var(--button-text-color);
+    color: var(--primary-color);
+    border-color: var(--button-text-color);
 }
 
-.signINbtn:hover {
-    background-image: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0.3)); 
-    border: 1.5px solid var(--primary-color);
+.signINbtn {
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: 2px solid var(--text-color);
 }
 
-.signUPbtn:hover + .signINbtn {
-    border-color: var(--primary-color);    
+.signUPbtn {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
 }
 
-nav .logo {
-    font-weight: bold;
-    font-size: 24px;
+footer {
+    background-color: var(--glass-color);
+    backdrop-filter: blur(var(--blur-radius));
+    color: rgb(248, 244, 244);
+    padding: 24px 32px;
+    text-align: center;
+    margin-top: auto;
 }
 
 .hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 16px;
+    background: #000;
+    overflow: hidden;
+    border-bottom-width: 1rem;
+    border-bottom-style: solid;
+    border-bottom-color: rgb(50, 55, 75);
+}
+
+.hero-section .animated-bg,
+.hero-section .animated-bg-secondary {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-section .animated-bg {
+    background-image: url("https://images.unsplash.com/photo-1564988295385-3c172ff07288?ixid=MnwzNjUyOXwwfDF8c2VhcmNofDN8fHRlY2hub2xvZ3l8ZW58MHx8fHwxNjE5OTU1NTE4&ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb");
+}
+
+.hero-section .animated-bg-secondary {
+    background-image: url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MnwzNjUyOXwwfDF8c2VhcmNofDIxfHx0ZWNobm9sb2d5fGVufDB8fHx8MTYxOTk1NTQ2OQ&ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb");
+}
+
+.hero-section .hero-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero-section .h2-texts {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+}
+
+.schedule-button {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.schedule-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+}
+
+/* Calendar styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    padding: 100px 20px;
+    padding: 20px;
+}
+
+.calendar-container {
+    display: none;
+    background-color: var(--glass-color);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+}
+
+.calendar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+}
+
+.calendar .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.calendar .header button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.calendar .header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+    padding: 8px;
     text-align: center;
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
-    position: relative;
-    overflow: hidden;
-    margin-top: 60px;
 }
 
-.hero-text {
-    font-weight: 500;
-    line-height: 4rem;
-    letter-spacing: -.03em;
-    color: var(--primary-color);
-    white-space: nowrap;
-    overflow: hidden;
-    text-align: center;
+.calendar-table th {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
 }
 
-.hero-text span {
-    font-size: 6rem;
-    line-height: 10rem;
-    color: transparent;
-    background-image: linear-gradient(74deg,
-        var(--telehealth-color-text-gradient-stop-1) 0,
-        var(--telehealth-color-text-gradient-stop-2) 9%,
-        var(--telehealth-color-text-gradient-stop-3) 20%,
-        var(--telehealth-color-text-gradient-stop-3) 24%,
-        var(--telehealth-color-text-gradient-stop-2) 35%,
-        var(--telehealth-color-text-gradient-stop-1) 44%,
-        var(--telehealth-color-text-gradient-stop-2) 50%,
-        var(--telehealth-color-text-gradient-stop-3) 56%,
-        var(--telehealth-color-surface) 75%,
-        var(--telehealth-color-surface) 100%);
-    background-size: 400% 100%;
-    -webkit-background-clip: text;
-    background-clip: text;
+.calendar-table td {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.h2-texts {
-    font-size: 2rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    text-align: center;
-    color: #444746;
+.calendar-table td.today {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
 }
 
-.animated-bg,
-.animated-bg-secondary {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 800%;
-    filter: blur(60px);
-    z-index: -1;
-    animation: moveCircles 15s infinite ease-in-out;
+.calendar-table td:hover:not(.today) {
+    background-color: rgba(79, 33, 234, 0.2);
 }
 
-.animated-bg {
-    background: var(--primary-color);
-    top: 20%;
-    left: 10%;
+.calendar-table td.other-month {
+    color: rgba(0, 0, 0, 0.3);
 }
 
-.animated-bg-secondary {
-    background: rgb(110, 255, 192);
-    top: 70%;
-    left: 80%;
-    animation-delay: 7.5s;
+#submit-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
 }
 
-@keyframes moveCircles {
-    0%, 100% {
-        transform: translate(0, 0);
-    }
-    20% {
-        transform: translate(50px, -100px);
-    }
-    40% {
-        transform: translate(-50px, 100px);
-    }
-    60% {
-        transform: translate(100px, 50px);
-    }
-    80% {
-        transform: translate(-100px, -50px);
-    }
+#submit-button:hover {
+    background-color: rgba(79, 33, 234, 0.8);
 }
 
-.content {
-    padding: 20px;
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
+.footer {
+    margin-top: 50px;
 }
 
-/* Floating button styling */
 .float-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    width: var(--float-button-size);     
+    width: var(--float-button-size);
     height: var(--float-button-size);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: floatButton 3s infinite ease-in-out;
-    z-index: 1001; /* Make sure it's on top of other elements */
-    transition: width 0.3s ease, height 0.3s ease; /* Smooth transition */
-}
-
-@keyframes floatButton {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-.float-button i {
-    font-size: 32px; /* Desired icon size */
-}
-
-.notification-indicator {
-    width: calc(var(--float-button-size) * 0.2);  /* 20% of button size */
-    height: calc(var(--float-button-size) * 0.2); 
-    background-color: red;
     border-radius: 50%;
-    position: absolute;
-    top: calc(var(--float-button-size) * 0.15);   /* 10% of button size from top */
-    right: calc(var(--float-button-size) * 0.15); /* 10% of button size from right */
-}
-
-.floating-action-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: floating 3s infinite ease-in-out;
-    z-index: 1001; /* Ensures it stays on top of other content */
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-.floating-action-button:hover {
-    background-color: darken(var(--primary-color), 10%);
-    width: 70px;
-    height: 70px;
-}
-
-.floating-action-button:active {
-    background-color: lighten(var(--primary-color), 10%);
-}
-
-.floating-action-button i {
-    font-size: 32px;
-}
-
-.floating-action-button .notification {
-    width: 12px;
-    height: 12px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.calendar-container {
-    display: none; /* Initially hide the calendar container */
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
-    border-radius: 8px;
-}
-
-/* Modal Styles */
-#scheduleModal .modal-dialog {
-    max-width: 800px; /* Adjust as needed */
-}
-
-#scheduleModal .modal-header,
-#scheduleModal .modal-footer {
     background-color: var(--primary-color);
     color: var(--button-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
-#scheduleModal .modal-header .btn-close {
-    background: none;
-    border: none;
-    color: var(--button-text-color);
-}
-
-#scheduleModal .modal-body {
-    background: var(--glass-color);
-    backdrop-filter: blur(var(--blur-radius));
-    padding: 20px;
-    border-radius: 8px;
+.float-button .notification-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 50%;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule Appointment</title>
     <script src="https://kit.fontawesome.com/2f26397946.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="schedule.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -32,18 +33,38 @@
         </div>
         <br>
         <div class="h2-texts">
-            <button class="signUPbtn" id="scheduleBtn">Schedule</button>
+            <button onclick="toggleCalendar()" class="schedule-button">Schedule</button>
         </div>
     </section>
 
-    <div class="schedule-container">
-        <div id="calendar-container">
-            <div id="calendar"></div>
+    <div class="container">
+        <div id="calendar-container" class="calendar-container">
+            <div class="calendar">
+                <div class="header">
+                    <button id="prevMonth">Previous</button>
+                    <h1 id="monthYear"></h1>
+                    <button id="nextMonth">Next</button>
+                </div>
+                <table class="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendarBody">
+                        <!-- Calendar dates will be injected here -->
+                    </tbody>
+                </table>
+            </div>
             <button class="signUPbtn" id="submit-button">Submit Health Data</button>
         </div>
     </div>
-
-    
 
     <footer>Created By DECEE</footer>
 
@@ -54,15 +75,79 @@
 
     <script src="../javascript/frontend.js"></script>
     <script src="../javascript/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth'
+        function toggleCalendar() {
+            const calendarContainer = document.getElementById('calendar-container');
+            if (calendarContainer.style.display === 'none' || calendarContainer.style.display === '') {
+                calendarContainer.style.display = 'block';
+                if (!calendarContainer.dataset.initialized) {
+                    initializeCalendar();
+                    calendarContainer.dataset.initialized = 'true';
+                }
+            } else {
+                calendarContainer.style.display = 'none';
+            }
+        }
+
+        function initializeCalendar() {
+            const calendarBody = document.getElementById('calendarBody');
+            const monthYear = document.getElementById('monthYear');
+            const prevMonth = document.getElementById('prevMonth');
+            const nextMonth = document.getElementById('nextMonth');
+
+            let currentDate = new Date();
+
+            function renderCalendar(date) {
+                calendarBody.innerHTML = '';
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                const firstDay = new Date(year, month, 1).getDay();
+                const lastDate = new Date(year, month + 1, 0).getDate();
+                const prevLastDate = new Date(year, month, 0).getDate();
+
+                monthYear.innerHTML = `${date.toLocaleString('default', { month: 'long' })} ${year}`;
+
+                let dayCounter = 1 - firstDay;
+
+                for (let week = 0; week < 6; week++) {
+                    const row = document.createElement('tr');
+
+                    for (let day = 0; day < 7; day++) {
+                        const cell = document.createElement('td');
+
+                        if (dayCounter < 1) {
+                            cell.textContent = prevLastDate + dayCounter;
+                            cell.classList.add('other-month');
+                        } else if (dayCounter > lastDate) {
+                            cell.textContent = dayCounter - lastDate;
+                            cell.classList.add('other-month');
+                        } else {
+                            cell.textContent = dayCounter;
+                            if (dayCounter === date.getDate() && month === new Date().getMonth() && year === new Date().getFullYear()) {
+                                cell.classList.add('today');
+                            }
+                        }
+
+                        row.appendChild(cell);
+                        dayCounter++;
+                    }
+
+                    calendarBody.appendChild(row);
+                }
+            }
+
+            prevMonth.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() - 1);
+                renderCalendar(currentDate);
             });
-            calendar.render();
-        });
+
+            nextMonth.addEventListener('click', () => {
+                currentDate.setMonth(currentDate.getMonth() + 1);
+                renderCalendar(currentDate);
+            });
+
+            renderCalendar(currentDate);
+        }
     </script>
 </body>
 </html>

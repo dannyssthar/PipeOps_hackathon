@@ -1,5 +1,14 @@
 {
+  "name": "THETA",
+  "version": "1.0.0",
+  "description": "Your app description",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
-    "fullcalendar": "^6.1.14"
-  }
+    "express": "^4.17.1"
+  },
+  "author": "Your Name",
+  "license": "ISC"
 }
